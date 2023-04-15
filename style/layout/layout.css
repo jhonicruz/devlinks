@@ -1,0 +1,140 @@
+body {
+  height: 100vh;
+  font-family: sans-serif;
+  font-size: 1.6rem;
+  padding: 10px;
+  background: var(--bg-url-desktop-dark) no-repeat center;
+  background-size: cover;
+}
+
+@media (max-width: 700px) {
+  body {
+    background: var(--bg-url-mobile-dark) no-repeat center;
+    background-size: cover;
+  }
+}
+
+#container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0 24px;
+  gap: 8px;
+}
+
+#foto {
+  gap: 16px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  color: var(--text-color);
+}
+
+#switch {
+  position: relative;
+  margin: 0 auto 16px;
+  width: 64px;
+  text-align: center;
+  overflow: visible;
+}
+
+#switch button {
+  display: block;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  left: 0;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background: var(--toggle-handle-color) var(--image-toggle) no-repeat center;
+  animation: slide-back 250ms forwards;
+  z-index: 1;
+  transition: 100ms;
+}
+
+#switch button:hover {
+  box-shadow: 0px 0px 0px 8px var(--highlight-color);
+  transition: 100ms;
+}
+
+
+.light #switch button {
+  animation: slide-in 250ms;
+}
+
+
+
+#switch span {
+  width: 64px;
+  height: 24px;
+  background-color: var(--surface-color);
+  border-radius: 99999px;
+  border: 1px solid var(--stroke-color);
+}
+
+#links {
+  gap: 8px;
+}
+
+#links li a {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  border: 1.5px solid var(--stroke-color);
+  gap: 16px;
+  padding: 16px;
+  border-radius: 8px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--text-color);
+  background: var(--surface-color);
+}
+
+#links li a:hover {
+  background-color: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+#redes {
+  gap: 16px;
+  padding: 16px 0;
+}
+
+#redes li a {
+  color: var(--text-color);
+  font-size: 21px;
+  display: flex;
+  padding: 16px;
+  border-radius: 50%;
+}
+
+#redes li a:hover {
+  background-color: var(--highlight-color);
+  transition: background 230ms;
+}
+
+#footer {
+  padding: 0 0 16px 0;
+  color: var(--text-color);
+}
+
+@keyframes slide-in {
+  to {
+    left: 0;
+  }
+  from {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  to {
+    left: 50%;
+  }
+  from {
+    left: 0;
+  }
+}
