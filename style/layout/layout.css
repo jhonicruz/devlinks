@@ -77,7 +77,7 @@ body {
 
 .hero-title {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: center;
   gap: 0.32ch;
   flex-wrap: nowrap;
@@ -88,6 +88,7 @@ body {
   color: var(--text-color);
   margin: 0;
   letter-spacing: -0.02em;
+  text-align: center;
 }
 
 .hero-title-static {
@@ -96,10 +97,6 @@ body {
 
 .typewriter-slot {
   display: inline-flex;
-  align-items: baseline;
-  justify-content: flex-start;
-  flex: 0 0 10ch;
-  min-width: 10ch;
   white-space: nowrap;
 }
 
@@ -107,7 +104,7 @@ body {
   display: inline-block;
   line-height: 1.1;
   white-space: nowrap;
-  text-align: left;
+  text-align: center;
   vertical-align: baseline;
   color: #00d4ff;
 }
@@ -535,7 +532,6 @@ body {
 
   .typewriter-slot {
     flex-basis: 8.5ch;
-    min-width: 8.5ch;
   }
 
   .hero-subtitle {

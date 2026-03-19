@@ -65,23 +65,30 @@ const perfisMovimento = [
   },
 ];
 
-// ===== TYPED.JS - TYPEWRITER ANIMATION =====
+// ===== TYPEWRITER ANIMATION (ONE TIME) =====
 
 function iniciarTypewriter() {
   const typewriterEl = document.querySelector("#typewriter-text");
   if (!typewriterEl) return;
 
-  new Typed(typewriterEl, {
-    strings: ["Jhoni^5200", "Developer^900", "Designer^900"],
-    typeSpeed: 60,
-    backSpeed: 45,
-    backDelay: 650,
-    startDelay: 900,
-    loop: true,
-    smartBackspace: false,
-    showCursor: true,
-    cursorChar: "|",
-  });
+  const nome = "Jhoni";
+  const velocidade = 95;
+  const atrasoInicial = 350;
+
+  typewriterEl.textContent = "";
+
+  setTimeout(() => {
+    let indice = 0;
+
+    const timer = setInterval(() => {
+      typewriterEl.textContent += nome[indice];
+      indice += 1;
+
+      if (indice >= nome.length) {
+        clearInterval(timer);
+      }
+    }, velocidade);
+  }, atrasoInicial);
 }
 
 // ===== GSAP ANIMATIONS - CARDS =====
