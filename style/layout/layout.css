@@ -24,7 +24,7 @@ body {
 
 .hero-section {
   position: relative;
-  min-height: 100vh;
+  min-height: 75vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -76,6 +76,11 @@ body {
 }
 
 .hero-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.32ch;
+  flex-wrap: nowrap;
   font-family: "Space Grotesk", "Poppins", sans-serif;
   font-size: 3.6rem;
   font-weight: 700;
@@ -85,17 +90,33 @@ body {
   letter-spacing: -0.02em;
 }
 
+.hero-title-static {
+  white-space: nowrap;
+}
+
+.typewriter-slot {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  flex: 0 0 10ch;
+  min-width: 10ch;
+  white-space: nowrap;
+}
+
 .typewriter {
   display: inline-block;
-  min-width: 2ch;
-  position: relative;
+  line-height: 1.1;
+  white-space: nowrap;
+  text-align: left;
+  vertical-align: baseline;
   color: #00d4ff;
 }
 
-.typewriter::after {
-  content: "|";
-  position: absolute;
-  right: -0.1em;
+.typed-cursor {
+  color: #00d4ff;
+  font-weight: 700;
+  line-height: 1;
+  margin-left: 0.05em;
   animation: blink-cursor 0.8s ease-in-out infinite;
 }
 
@@ -504,11 +525,17 @@ body {
 
   .hero-section {
     padding: 40px 16px;
-    min-height: auto;
+    min-height: 65vh;
   }
 
   .hero-title {
     font-size: 2.2rem;
+    flex-wrap: wrap;
+  }
+
+  .typewriter-slot {
+    flex-basis: 8.5ch;
+    min-width: 8.5ch;
   }
 
   .hero-subtitle {

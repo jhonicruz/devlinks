@@ -72,13 +72,15 @@ function iniciarTypewriter() {
   if (!typewriterEl) return;
 
   new Typed(typewriterEl, {
-    strings: ["Jhoni", "Developer", "Designer"],
-    typeSpeed: 80,
-    backSpeed: 60,
-    backDelay: 2000,
-    startDelay: 500,
+    strings: ["Jhoni^5200", "Developer^900", "Designer^900"],
+    typeSpeed: 60,
+    backSpeed: 45,
+    backDelay: 650,
+    startDelay: 900,
     loop: true,
-    showCursor: false,
+    smartBackspace: false,
+    showCursor: true,
+    cursorChar: "|",
   });
 }
 
