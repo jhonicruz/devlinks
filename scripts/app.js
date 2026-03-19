@@ -119,18 +119,19 @@ function carregarPreviewQuandoVisivel() {
 
         const preview = entry.target;
         const { previewUrl } = preview.dataset;
+        const previewUrlResolvida = previewUrl ? new URL(previewUrl, window.location.href).href : "";
 
-        if (!previewUrl) {
+        if (!previewUrlResolvida) {
           currentObserver.unobserve(preview);
           return;
         }
 
         const imagem = new Image();
         imagem.decoding = "async";
-        imagem.src = previewUrl;
+        imagem.src = previewUrlResolvida;
 
         imagem.onload = () => {
-          preview.style.setProperty("--preview-url", `url('${previewUrl}')`);
+          preview.style.setProperty("--preview-url", `url('${previewUrlResolvida}')`);
           preview.classList.add("is-loaded");
           preview.classList.remove("is-error");
         };
@@ -163,7 +164,7 @@ function renderizarProjetos() {
 
   projetos.forEach((projeto, indice) => {
     const card = document.createElement("a");
-    const screenshotUrl = projeto.imagem;
+    const screenshotUrl = new URL(projeto.imagem, window.location.href).href;
     const perfil = perfisMovimento[indice % perfisMovimento.length];
 
     card.className = "project-card";
