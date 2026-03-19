@@ -2,9 +2,79 @@ const botao = document.querySelector("#switch button");
 const body = document.body;
 const heroAvatar = document.querySelector(".hero-avatar img");
 const projectsGrid = document.querySelector("#projects-grid");
+const languageSwitch = document.querySelector("#language-switch");
+const heroCta = document.querySelector("#hero-cta");
+const socialWhatsapp = document.querySelector("#social-whatsapp");
 
 // Registrar ScrollTrigger com GSAP
 gsap.registerPlugin(ScrollTrigger);
+
+const i18n = {
+  "pt-BR": {
+    htmlLang: "pt-br",
+    heroTitleStatic: "Olá, me chamo",
+    heroSubtitle: "Full Stack Developer & UI/UX Designer",
+    heroDescription:
+      "Transformo ideias em experiências digitais incríveis. Desenvolvimento web moderno, design intuitivo e performance garantida.",
+    heroCta: "Quero um orçamento",
+    projectsTitle: "Projetos Desenvolvidos",
+    projectsSubtitle: "Clique em qualquer projeto para abrir o site.",
+    themeTitle: "Trocar tema",
+    languageAria: "Selecionar idioma",
+    whatsappText: "Olá, vim pelo seu site e quero um orçamento.",
+  },
+  en: {
+    htmlLang: "en",
+    heroTitleStatic: "Hello, my name is",
+    heroSubtitle: "Full Stack Developer & UI/UX Designer",
+    heroDescription:
+      "I turn ideas into outstanding digital experiences. Modern web development, intuitive design, and high performance.",
+    heroCta: "Get a quote",
+    projectsTitle: "Featured Projects",
+    projectsSubtitle: "Click any project card to open the website.",
+    themeTitle: "Switch theme",
+    languageAria: "Select language",
+    whatsappText: "Hello, I came from your website and would like a quote.",
+  },
+};
+
+function montarLinkWhatsapp(texto) {
+  return `https://wa.me/5588999834281?text=${encodeURIComponent(texto)}`;
+}
+
+function aplicarIdioma(lang) {
+  const idioma = i18n[lang] ? lang : "pt-BR";
+  const dict = i18n[idioma];
+  const elementos = document.querySelectorAll("[data-i18n]");
+
+  document.documentElement.lang = dict.htmlLang;
+  if (languageSwitch) {
+    languageSwitch.value = idioma;
+    languageSwitch.setAttribute("aria-label", dict.languageAria);
+  }
+
+  elementos.forEach((el) => {
+    const chave = el.dataset.i18n;
+    if (dict[chave]) {
+      el.textContent = dict[chave];
+    }
+  });
+
+  if (botao) {
+    botao.setAttribute("title", dict.themeTitle);
+    botao.setAttribute("aria-label", dict.themeTitle);
+  }
+
+  const whatsappHref = montarLinkWhatsapp(dict.whatsappText);
+  if (heroCta) {
+    heroCta.href = whatsappHref;
+  }
+  if (socialWhatsapp) {
+    socialWhatsapp.href = whatsappHref;
+  }
+
+  localStorage.setItem("preferred-language", idioma);
+}
 
 const projetos = [
   {
@@ -218,3 +288,13 @@ function adicionarClasse() {
 botao.addEventListener("click", adicionarClasse);
 iniciarTypewriter();
 renderizarProjetos();
+
+const idiomaSalvo = localStorage.getItem("preferred-language") || "pt-BR";
+aplicarIdioma(idiomaSalvo);
+
+if (languageSwitch) {
+  languageSwitch.addEventListener("change", (event) => {
+    const { value } = event.target;
+    aplicarIdioma(value);
+  });
+}
