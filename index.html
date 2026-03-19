@@ -1,87 +1,92 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Links</title>
-    <meta name="description" content="Página de Links para redes sociais" />
-    <link rel="preload" href="./style/style.css" as="style" />
-    <link rel="stylesheet" href="./style/style.css" />
-  </head>
 
-  <body>
-    <div id="container" class="flex column">
-      <div id="foto" class="flex column align-center">
-        <img src="./assets/dark.png" alt="Foto do Jhoni de óculos" width="112" height="auto" />
-        <span>@jhoniwebdesigner</span>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Links</title>
+  <meta name="description" content="Página de Links para redes sociais" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="preload" href="./style/style.css" as="style" />
+  <link rel="stylesheet" href="./style/style.css" />
+</head>
+
+<body>
+  <div id="container" class="flex column">
+    <header id="hero" class="hero-section">
+      <div class="hero-toggle">
+        <div id="switch" class="flex justify-center align-center">
+          <span></span>
+          <button title="Trocar de thema"></button>
+        </div>
       </div>
 
-      <div id="switch" class="flex justify-center align-center">
-        <span></span>
-        <button title="Trocar de thema"></button>
+      <div class="hero-content flex column align-center">
+        <div class="hero-avatar">
+          <img src="./assets/dark.png" alt="Jhoni Developer" width="140" height="140" />
+        </div>
+
+        <div class="hero-text">
+          <h1 class="hero-title">
+            Olá, sou <span class="typewriter" id="typewriter-text">Jhoni</span>
+          </h1>
+          <p class="hero-subtitle">Full Stack Developer & UI/UX Designer</p>
+          <p class="hero-description">
+            Transformo ideias em experiências digitais incríveis. Desenvolvimento web moderno, design intuitivo e
+            performance garantida.
+          </p>
+        </div>
+
+        <a href="#projects" class="cta-button">Ver Meus Projetos</a>
       </div>
+    </header>
 
-      <ul id="links" class="flex column">
-        <li>
-          <a href="https://w.app/jhonideveloper" target="_blank" rel="noopener" title="Inscreva-se no NLW">
-            UX | UI Designer
-          </a>
-        </li>
-        <!-- <li>
-          <a href="https://jhsuplementos.com.br/" target="_blank" rel="noopener" title="Ver Projeto da Citrino Modas">
-            JH Suplementos
-          </a>
-        </li> -->
-        <li>
-          <a href="https://w.app/jhonideveloper" target="_blank" rel="noopener" title="Ver Projeto da Bikcraft">
-            Sites
-          </a>
-        </li>
-        <li>
-          <a href="https://w.app/jhonideveloper" target="_blank" rel="noopener" title="Conheça o Explorer">
-            Automações
-          </a>
-        </li>
-        <li>
-          <a href="https://w.app/jhonideveloper" target="_blank" rel="noopener" title="Conheça o Explorer">
-            Designer Gráfico
-          </a>
-        </li>
-      </ul>
+    <section id="projects" aria-label="Projetos desenvolvidos">
+      <header class="projects-header">
+        <h1>Projetos Desenvolvidos</h1>
+        <p>Clique em qualquer projeto para abrir o site.</p>
+      </header>
 
-      <ul id="redes" class="flex justify-center align-center">
-        <li>
-          <a href="https://github.com/jhonicruz" target="_blank" rel="noopener" title="Github">
-            <ion-icon name="logo-github"></ion-icon>
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://instagram.com/jhoniwebdesigner?igshid=YmMyMTA2M2Y="
-            target="_blank"
-            rel="noopener"
-            title="Instagram"
-          >
-            <ion-icon name="logo-instagram"></ion-icon>
-          </a>
-        </li>
-        <li>
-          <a href="https://w.app/jhonideveloper" target="_blank" rel="noopener" title="Whatsapp">
-            <ion-icon name="logo-whatsapp"></ion-icon>
-          </a>
-        </li>
-        <!-- <li>
+      <div id="projects-grid" class="projects-grid"></div>
+    </section>
+
+    <ul id="redes" class="flex justify-center align-center">
+      <li>
+        <a href="https://github.com/jhonicruz" target="_blank" rel="noopener" title="Github">
+          <ion-icon name="logo-github"></ion-icon>
+        </a>
+      </li>
+      <li>
+        <a href="https://instagram.com/jhonideveloper" target="_blank" rel="noopener" title="Instagram">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+      </li>
+      <li>
+        <a href="https://w.app/jhonideveloper" target="_blank" rel="noopener" title="Whatsapp">
+          <ion-icon name="logo-whatsapp"></ion-icon>
+        </a>
+      </li>
+      <!-- <li>
           <a href="#" target="_blank" rel="noopener" title="Youtube"><ion-icon name="logo-youtube"></ion-icon></a>
         </li>
         <li>
           <a href="#" target="_blank" rel="noopener" title="Linkedin"><ion-icon name="logo-linkedin"></ion-icon></a>
         </li> -->
-      </ul>
-    </div>
+    </ul>
+  </div>
 
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="./scripts/app.js"></script>
-  </body>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="./scripts/app.js"></script>
+</body>
+
 </html>
