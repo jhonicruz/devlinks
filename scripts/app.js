@@ -10,37 +10,37 @@ const projetos = [
   {
     nome: "Parallax",
     url: "https://jhonicruz.github.io/parallax/",
-    imagem: "/assets/projects/parallax.webp",
+    imagem: "./assets/projects/parallax.webp",
   },
   {
     nome: "Bikcraft",
     url: "https://jhonicruz.github.io/bikcraft/",
-    imagem: "/assets/projects/bikcraft.webp",
+    imagem: "./assets/projects/bikcraft.webp",
   },
   {
     nome: "Marmifit Cardapio",
     url: "https://marmifit.github.io/cardapio/",
-    imagem: "/assets/projects/marmifit-cardapio.webp",
+    imagem: "./assets/projects/marmifit-cardapio.webp",
   },
   {
     nome: "Forest",
     url: "https://forest-liard-theta.vercel.app/",
-    imagem: "/assets/projects/forest.webp",
+    imagem: "./assets/projects/forest.webp",
   },
   {
     nome: "Eclass",
     url: "https://eclass-eight.vercel.app/",
-    imagem: "/assets/projects/eclass.webp",
+    imagem: "./assets/projects/eclass.webp",
   },
   {
     nome: "Dogs Next",
     url: "https://dogs-next-woad.vercel.app/",
-    imagem: "/assets/projects/dogs-next.webp",
+    imagem: "./assets/projects/dogs-next.webp",
   },
   {
     nome: "Alan Marcel",
     url: "https://alanmarcel.com/",
-    imagem: "/assets/projects/alan-marcel.webp",
+    imagem: "./assets/projects/alan-marcel.webp",
   },
 ];
 
